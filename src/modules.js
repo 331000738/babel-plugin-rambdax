@@ -15,7 +15,7 @@ const _ramdaPath = path.dirname(Module._resolveFilename('rambdax', merge(new Mod
 })));
 
 // ramda folder will be /nodemodules/ramda/dist. We want to remove the dist
-const ramdaPath = _ramdaPath.slice(0, _ramdaPath.lastIndexOf('rambdax') + 5);
+const ramdaPath = _ramdaPath.slice(0, _ramdaPath.lastIndexOf('rambdax') + 7);
 
 // We do not need to change the search path based on useES since src and es are both built from the
 // same source in Ramda, and the directories will therefore always have identical contents.
