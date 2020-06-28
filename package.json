@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-rambdax",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Ramda modularized builds without the hassle",
   "repository": "331000738/babel-plugin-rambdax",
   "author": "xjp",
