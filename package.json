@@ -5,6 +5,9 @@
   "repository": "331000738/babel-plugin-rambdax",
   "author": "xjp",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "license": "WTFPL",
   "devDependencies": {
     "@babel/cli": "7.1.2",
