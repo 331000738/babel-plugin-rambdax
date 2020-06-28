@@ -22,12 +22,20 @@ const ramdaPath = _ramdaPath.slice(0, _ramdaPath.lastIndexOf('rambdax') + 7);
 var methods = fs.readdirSync(path.join(ramdaPath, 'src'))
     .filter(name => path.extname(name) == '.js')
     .map(name => path.basename(name, '.js'));
+var rawRambdaMethods = fs.readdirSync(path.join(ramdaPath, 'src/rambda'))
+    .filter(name => path.extname(name) == '.js')
+    .map(name => path.basename(name, '.js'));
 
 export default function resolveModule(useES, name) {
 
   for (var category in methods) {
     if (contains(name, methods)) {
       return `rambdax/${useES ? 'es' : 'src'}/${name}`;
+    }
+  }
+  for (var category in rawRambdaMethods) {
+    if (contains(name, rawRambdaMethods)) {
+      return `rambdax/${useES ? 'es' : 'src'}/rambda/${name}`;
     }
   }
   throw new Error(`Ramda method ${name} was not a known function

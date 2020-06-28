@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-rambdax",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Ramda modularized builds without the hassle",
   "repository": "331000738/babel-plugin-rambdax",
   "author": "xjp",
@@ -22,6 +22,7 @@
     "ramda": "*"
   },
   "scripts": {
+    "pub": "yarn build; gp; npm publish --registry http://registry.npmjs.org",
     "build": "rm -rf lib && babel src --out-dir lib",
     "test": "mocha --require @babel/register"
   },
