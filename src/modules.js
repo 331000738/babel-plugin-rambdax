@@ -27,13 +27,17 @@ var rawRambdaMethods = fs.readdirSync(path.join(ramdaPath, 'src/rambda'))
     .map(name => path.basename(name, '.js'));
 
 export default function resolveModule(useES, name) {
-  if (contains(name, methods)) {
-    return `rambdax/src/${name}`;
-  }
-  if (contains(name, rawRambdaMethods)) {
-    return `rambdax/src/rambda/${name}`;
-  }
 
+  for (var category in methods) {
+    if (contains(name, methods)) {
+      return `rambdax/src/${name}`;
+    }
+  }
+  for (var category in rawRambdaMethods) {
+    if (contains(name, rawRambdaMethods)) {
+      return `rambdax/src/rambda/${name}`;
+    }
+  }
   throw new Error(`rambdax method ${name} was not a known function
     Please file a bug if it's my fault https://github.com/331000738/babel-plugin-rambdax/issues
   `);
