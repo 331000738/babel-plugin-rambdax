@@ -49,15 +49,9 @@ Babel v5 is no longer supported. Use [v0.1.2](https://github.com/megawac/babel-p
 or
 ```json
 {
-  "plugins": [
-    ["rambdax", {
-      "useES": true
-    }]
-  ]
+  "plugins": "rambdax"
 }
 ```
-
-to use the new `rambdax/es/` path for imports, which is available since rambdax 0.25. This is recommended as it uses ES modules rather than CommonJS. It defaults to `rambdax/src/` when omitted.
 
 ###### Via CLI
 
