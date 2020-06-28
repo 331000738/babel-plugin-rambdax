@@ -87,7 +87,7 @@ export default function({ types: t }) {
       ExportAllDeclaration(path) {
         let { node } = path;
         if (node.source && node.source.value === 'rambdax') {
-          throw new Error('`export * from "ramda"` defeats the purpose of babel-plugin-ramda');
+          throw new Error('`export * from "rambdax"` defeats the purpose of babel-plugin-rambdax');
         }
       },
       CallExpression(path, state) {

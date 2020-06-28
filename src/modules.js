@@ -14,7 +14,7 @@ const _ramdaPath = path.dirname(Module._resolveFilename('rambdax', merge(new Mod
   'paths': Module._nodeModulePaths(process.cwd())
 })));
 
-// ramda folder will be /nodemodules/ramda/dist. We want to remove the dist
+// rambdax folder will be /nodemodules/rambdax/dist. We want to remove the dist
 const ramdaPath = _ramdaPath.slice(0, _ramdaPath.lastIndexOf('rambdax') + 7);
 
 // We do not need to change the search path based on useES since src and es are both built from the
@@ -38,7 +38,7 @@ export default function resolveModule(useES, name) {
       return `rambdax/src/rambda/${name}`;
     }
   }
-  throw new Error(`Ramda method ${name} was not a known function
-    Please file a bug if it's my fault https://github.com/megawac/babel-plugin-ramda/issues
+  throw new Error(`rambdax method ${name} was not a known function
+    Please file a bug if it's my fault https://github.com/331000738/babel-plugin-rambdax/issues
   `);
 };
