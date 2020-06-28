@@ -22,7 +22,7 @@
     "ramda": "*"
   },
   "scripts": {
-    "pub": "yarn build; gp; npm publish --registry http://registry.npmjs.org",
+    "pub": "yarn build; npm publish --registry http://registry.npmjs.org",
     "build": "rm -rf lib && babel src --out-dir lib",
     "test": "mocha --require @babel/register"
   },
