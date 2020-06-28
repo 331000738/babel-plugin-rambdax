@@ -22,7 +22,7 @@ const ramdaPath = _ramdaPath.slice(0, _ramdaPath.lastIndexOf('rambdax') + 7);
 var methods = fs.readdirSync(path.join(ramdaPath, 'src'))
     .filter(name => path.extname(name) == '.js')
     .map(name => path.basename(name, '.js'));
-var rawRambdaMethods = fs.readdirSync(path.join(ramdaPath, 'src/rambda'))
+var rawRambdaMethods = fs.readdirSync(path.join(ramdaPath, 'src', 'rambda'))
     .filter(name => path.extname(name) == '.js')
     .map(name => path.basename(name, '.js'));
 
