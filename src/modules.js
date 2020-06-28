@@ -30,12 +30,12 @@ export default function resolveModule(useES, name) {
 
   for (var category in methods) {
     if (contains(name, methods)) {
-      return `rambdax/${useES ? 'es' : 'src'}/${name}`;
+      return `rambdax/src/${name}`;
     }
   }
   for (var category in rawRambdaMethods) {
     if (contains(name, rawRambdaMethods)) {
-      return `rambdax/${useES ? 'es' : 'src'}/rambda/${name}`;
+      return `rambdax/src/rambda/${name}`;
     }
   }
   throw new Error(`Ramda method ${name} was not a known function
