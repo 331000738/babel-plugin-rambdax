@@ -1,4 +1,4 @@
-import { addDefault } from '@babel/helper-module-imports';
+import { addNamespace } from '@babel/helper-module-imports';
 import resolveModule from './modules';
 
 const SPECIAL_TYPES = ['isMemberExpression', 'isProperty'];
@@ -20,7 +20,8 @@ export default function({ types: t }) {
   function importMethod(useES, methodName, file) {
     if (!selectedMethods[methodName]) {
       let path = resolveModule(useES, methodName);
-      selectedMethods[methodName] = addDefault(file.path, path, { nameHint: methodName });
+      // 因rambdax src中使用的export const/function而非 export default故需将addNamed方法替换为addNamespace
+      selectedMethods[methodName] = addNamespace(file.path, path, { nameHint: methodName });
     }
     return t.clone(selectedMethods[methodName]);
   }
