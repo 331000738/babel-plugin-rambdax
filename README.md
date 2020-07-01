@@ -10,9 +10,11 @@ See also [`babel-plugin-lodash`](https://github.com/megawac/babel-plugin-lodash)
 Converts
 
 ```js
-import R, {map} from 'rambdax';
+// @notice: donot support importNamed, will throw a exception:
+// import { map, add } from 'rambdax'
+import RX from 'rambdax';
 
-map(R.add(1), [1, 2, 3]);
+RX.map(RX.add(1), [1, 2, 3]);
 ```
 
 Roughly to 
